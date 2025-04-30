@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Sumeet Dube</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+
+</head>
+<body>
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">
+          <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
+        </a>
+        
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button id="mode-toggle">🌙</button>
+      </nav>
+
+  <section class="contact">
+    <h1>Let's Connect 🤝</h1>
+    <div class="contact-card">
+        <form action="https://formsubmit.co/sumeetdube7@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+          
+            <!-- Optional settings -->
+            <input type="hidden" name="_subject" value="New Message from Portfolio!">
+            <input type="hidden" name="_captcha" value="false">
+          
+            <button type="submit">Send</button>
+          </form>
+      <div class="quick-links">
+        <a href="mailto:Sumeetdube7@gmail.com">📧 Email</a>
+        <a href="https://linkedin.com/in/sumeetdube" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/dsumeet14" target="_blank">💻 GitHub</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

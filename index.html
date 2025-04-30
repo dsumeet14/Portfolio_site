@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sumeet Dube Portfolio</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script src="scripts/script.js" defer></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
+    </a>
+    
+    <ul class="nav-list">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="mode-toggle">🌙</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="typewriter"></h1>
+      <div class="cta-buttons">
+        <a href="contact.html" class="cta">Get in Touch</a>
+        <a href="resume.html" class="cta">Resume</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <img id="avatarImg" src="assets/img/avatar.png" alt="Avatar of Sumeet" />
+    </div>
+  </header>
+
+  <!-- Recommendations Carousel -->
+  <section class="carousel-section">
+    <h2>Recommendations</h2>
+    <div class="carousel" id="recCarousel">
+      <div class="carousel-track">
+        
+        <!-- Item 1 -->
+        <div class="carousel-item">
+          <p>“Sumeet is a brilliant mind with a passion for learning and applying technology.” – Prof. John Doe</p>
+          <button class="view-recommendation-btn">View Full</button>
+          <div class="full-recommendation">
+            <p>Sumeet has demonstrated extraordinary aptitude in solving complex AI/ML problems and consistently delivers excellent results.</p>
+            <div class="recommender-details">
+              <h4>Prof. John Doe</h4>
+              <p>Professor, AI/ML - XYZ University</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="carousel-item">
+          <p>“Sumeet takes ownership and consistently goes above and beyond expectations.” – Ms. Jane Smith</p>
+          <button class="view-recommendation-btn">View Full</button>
+          <div class="full-recommendation">
+            <p>He approaches challenges with maturity, contributes innovative ideas, and has a bright future ahead.</p>
+            <div class="recommender-details">
+              <h4>Ms. Jane Smith</h4>
+              <p>Mentor, VibeByte Media</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-btn prev">‹</button>
+      <button class="carousel-btn next">›</button>
+    </div>
+  </section>
+</body>
+</html>
