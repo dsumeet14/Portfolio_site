@@ -1,163 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects - Sumeet Dube</title>
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script src="scripts/script.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Sumeet Dube</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/script.js" defer></script>
+  </head>
+  <body>
     <nav class="nav">
-        <a href="index.html" class="nav-logo">
-          <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
-        </a>
-        
-        <ul class="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="experience.html">Experience</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button id="mode-toggle">🌙</button>
-      </nav>
+      <a href="index.html" class="nav-logo">
+        <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
+      </a>
 
-  <section class="projects">
-    <h1>Projects</h1>
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="mode-toggle">🌙</button>
+    </nav>
 
-    <!-- ===== AI/ML Projects ===== -->
-    <h2>AI / ML Projects</h2>
-    <div class="project-carousel" id="carousel-ai">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="project-card" data-title="Nutritional Diet Suggestion Expert System" data-description="Suggests nutritional plans based on BMR and user inputs." data-tech="Python" data-link="https://github.com/dsumeet14/Expert-System-meal-recommendations-according-to-diet-plan">
-            <h3>Nutritional Diet System</h3>
-            <p>Expert system for personalized diet planning.</p>
-            <span class="tech">Python</span>
-            <a href="https://github.com/dsumeet14/Expert-System-meal-recommendations-according-to-diet-plan" class="btn">GitHub</a>
-          </li>
-          <li class="project-card" data-title="Waste Classification using VGG16" data-description="Classifies waste using deep learning CNN." data-tech="Python, VGG16" data-link="https://github.com/dsumeet14/Waste-Classification-using-VGG16">
-            <h3>Waste Classification</h3>
-            <p>Recyclable vs Organic using VGG16.</p>
-            <span class="tech">CNN</span>
-            <a href="https://github.com/dsumeet14/Waste-Classification-using-VGG16" class="btn">GitHub</a>
-          </li>
-          <li class="project-card" data-title="Mammogram Segmentation" data-description="Segmenting pectoral muscle in MLO-view mammograms using U-Net and Watershed." data-tech="PyTorch" data-link="https://github.com/dsumeet14/Mammogram-Segmentation">
-            <h3>Mammogram Segmentation</h3>
-            <p>Medical image segmentation.</p>
-            <span class="tech">Medical AI</span>
-            <a href="https://github.com/dsumeet14/Mammogram-Segmentation" class="btn">GitHub</a>
-          </li>
-        </ul>
+    <section class="projects">
+      <h1>Projects</h1>
+
+      <!-- ===== AI/ML Projects ===== -->
+      <h2>AI / ML Projects</h2>
+      <div class="project-carousel" id="carousel-ai">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li
+              class="project-card"
+              data-title="Nutritional Diet Suggestion Expert System"
+              data-description="Suggests nutritional plans based on BMR and user inputs."
+              data-tech="Python"
+              data-link="https://github.com/dsumeet14/Expert-System-meal-recommendations-according-to-diet-plan"
+            >
+              <h3>Nutritional Diet System</h3>
+              <p>Expert system for personalized diet planning.</p>
+              <span class="tech">Python</span>
+              <a
+                href="https://github.com/dsumeet14/Expert-System-meal-recommendations-according-to-diet-plan"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="Waste Classification using VGG16      "
+              data-description="Classifies waste using deep learning CNN."
+              data-tech="Python, VGG16"
+              data-link="https://github.com/dsumeet14/Waste-Classification-using-VGG16"
+            >
+              <h3>Waste Classification</h3>
+              <p>Recyclable vs Organic using VGG16.</p>
+              <span class="tech">CNN</span>
+              <a
+                href="https://github.com/dsumeet14/Waste-Classification-using-VGG16"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="Mammogram Segmentation"
+              data-description="Segmenting pectoral muscle in MLO-view mammograms using U-Net and Watershed."
+              data-tech="PyTorch"
+              data-link="https://github.com/dsumeet14/Mammogram-Segmentation"
+            >
+              <h3>Mammogram Segmentation</h3>
+              <p>Medical image segmentation.</p>
+              <span class="tech">Medical AI</span>
+              <a
+                href="https://github.com/dsumeet14/Mammogram-Segmentation"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
       </div>
-      <button class="carousel-btn next">›</button>
-    </div>
 
-    <!-- ===== PHP & MySQL Projects ===== -->
-    <h2>Web Development (PHP / MySQL)</h2>
-    <div class="project-carousel" id="carousel-php">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="project-card" data-title="Login System" data-description="Secure login system with session handling." data-tech="PHP, MySQL" data-link="https://github.com/dsumeet14/Login_Page_Using_PHP_and_mysql">
-            <h3>Login System</h3>
-            <p>Basic auth and session flow.</p>
-            <span class="tech">PHP</span>
-            <a href="https://github.com/dsumeet14/Login_Page_Using_PHP_and_mysql" class="btn">GitHub</a>
-          </li>
-          <li class="project-card" data-title="Employee Management" data-description="Manages employee records with search/authentication." data-tech="PHP, MySQL" data-link="https://github.com/dsumeet14/Employee-Managment-System-PHP-MYSQL">
-            <h3>Employee Management</h3>
-            <p>CRUD system for employee data.</p>
-            <span class="tech">MySQL</span>
-            <a href="https://github.com/dsumeet14/Employee-Managment-System-PHP-MYSQL" class="btn">GitHub</a>
-          </li>
-        </ul>
+      <!-- ===== PHP & MySQL Projects ===== -->
+      <h2>Web Development (PHP / MySQL)</h2>
+      <div class="project-carousel" id="carousel-php">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li
+              class="project-card"
+              data-title="Login System"
+              data-description="Secure login system with session handling."
+              data-tech="PHP, MySQL"
+              data-link="https://github.com/dsumeet14/Login_Page_Using_PHP_and_mysql"
+            >
+              <h3>Login System</h3>
+              <p>Basic auth and session flow.</p>
+              <span class="tech">PHP</span>
+              <a
+                href="https://github.com/dsumeet14/Login_Page_Using_PHP_and_mysql"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="Employee Management"
+              data-description="Manages employee records with search/authentication."
+              data-tech="PHP, MySQL"
+              data-link="https://github.com/dsumeet14/Employee-Managment-System-PHP-MYSQL"
+            >
+              <h3>Employee Management</h3>
+              <p>CRUD system for employee data.</p>
+              <span class="tech">MySQL</span>
+              <a
+                href="https://github.com/dsumeet14/Employee-Managment-System-PHP-MYSQL"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
       </div>
-      <button class="carousel-btn next">›</button>
-    </div>
 
-    <!-- ===== UX/UI Projects ===== -->
-    <h2>UX / UI Projects</h2>
-    <div class="project-carousel" id="carousel-ux">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="project-card" data-title="Coffee Shop App" data-description="Mobile app prototype for café ordering." data-tech="Figma" data-link="https://www.figma.com/proto/QHOb71cGPDWrzB9XGSXrcw/CoffeeHouseWIreFrame">
-            <h3>Coffee App (UX)</h3>
-            <p>Food order flow in Figma.</p>
-            <span class="tech">UX</span>
-            <a href="https://www.figma.com/proto/QHOb71cGPDWrzB9XGSXrcw/CoffeeHouseWIreFrame" class="btn">Figma</a>
-          </li>
-          <li class="project-card" data-title="CoffeeHouse Web Design" data-description="Adobe XD mockup for web ordering." data-tech="Adobe XD" data-link="https://xd.adobe.com/view/fddd5358-28f2-4909-b2e8-deee7545034a-a88e/">
-            <h3>Coffee Web UI</h3>
-            <p>Desktop site design in Adobe XD.</p>
-            <span class="tech">UI</span>
-            <a href="https://xd.adobe.com/view/fddd5358-28f2-4909-b2e8-deee7545034a-a88e/" class="btn">XD</a>
-          </li>
-        </ul>
+      <!-- ===== UX/UI Projects ===== -->
+      <h2>UX / UI Projects</h2>
+      <div class="project-carousel" id="carousel-ux">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li
+              class="project-card"
+              data-title="Coffee Shop App"
+              data-description="Mobile app prototype for café ordering."
+              data-tech="Figma"
+              data-link="https://www.figma.com/proto/QHOb71cGPDWrzB9XGSXrcw/CoffeeHouseWIreFrame"
+            >
+              <h3>Coffee App (UX)</h3>
+              <p>Food order flow in Figma.</p>
+              <span class="tech">UX</span>
+              <a
+                href="https://www.figma.com/proto/QHOb71cGPDWrzB9XGSXrcw/CoffeeHouseWIreFrame"
+                class="btn"
+                >Figma</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="CoffeeHouse Web Design"
+              data-description="Adobe XD mockup for web ordering."
+              data-tech="Adobe XD"
+              data-link="https://xd.adobe.com/view/fddd5358-28f2-4909-b2e8-deee7545034a-a88e/"
+            >
+              <h3>Coffee Web UI</h3>
+              <p>Desktop site design in Adobe XD.</p>
+              <span class="tech">UI</span>
+              <a
+                href="https://xd.adobe.com/view/fddd5358-28f2-4909-b2e8-deee7545034a-a88e/"
+                class="btn"
+                >XD</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
       </div>
-      <button class="carousel-btn next">›</button>
-    </div>
 
-    <!-- ===== HTML/CSS Projects ===== -->
-    <h2>HTML / CSS Projects</h2>
-    <div class="project-carousel" id="carousel-html">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="project-card" data-title="CSE-AIML Department Website" data-description="CSE-AIML branch resource portal." data-tech="HTML, CSS" data-link="https://github.com/dsumeet14/CSE-AIML-DEPARTMENT-WEBSITE">
-            <h3>Branch Website</h3>
-            <p>Internal college website.</p>
-            <span class="tech">HTML</span>
-            <a href="https://github.com/dsumeet14/CSE-AIML-DEPARTMENT-WEBSITE" class="btn">GitHub</a>
-          </li>
-        </ul>
+      <!-- ===== HTML/CSS Projects ===== -->
+      <h2>HTML / CSS Projects</h2>
+      <div class="project-carousel" id="carousel-html">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li
+              class="project-card"
+              data-title="CSE-AIML Department Website"
+              data-description="CSE-AIML branch resource portal."
+              data-tech="HTML, CSS"
+              data-link="https://github.com/dsumeet14/CSE-AIML-DEPARTMENT-WEBSITE"
+            >
+              <h3>Branch Website</h3>
+              <p>Internal college website.</p>
+              <span class="tech">HTML</span>
+              <a
+                href="https://github.com/dsumeet14/CSE-AIML-DEPARTMENT-WEBSITE"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
       </div>
-      <button class="carousel-btn next">›</button>
-    </div>
 
-    <!-- ===== Python & Java Projects ===== -->
-    <h2>Python & Java Programs</h2>
-    <div class="project-carousel" id="carousel-lang">
-      <button class="carousel-btn prev">‹</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="project-card" data-title="Shop Management Program" data-description="Java app for billing and inventory." data-tech="Java" data-link="https://github.com/dsumeet14/Electronic-Shop-Management-System-Java">
-            <h3>Shop Manager</h3>
-            <p>Billing + inventory system.</p>
-            <span class="tech">Java</span>
-            <a href="https://github.com/dsumeet14/Electronic-Shop-Management-System-Java" class="btn">GitHub</a>
-          </li>
-          <li class="project-card" data-title="Weather App" data-description="Python GUI using OpenWeather API." data-tech="Python" data-link="https://github.com/dsumeet14/Weather-App">
-            <h3>Weather App</h3>
-            <p>Live city weather app.</p>
-            <span class="tech">Python</span>
-            <a href="https://github.com/dsumeet14/Weather-App" class="btn">GitHub</a>
-          </li>
-          <li class="project-card" data-title="Flowchart Drawer" data-description="Reads Excel ➝ JSON ➝ SQLite ➝ PDF flowchart." data-tech="Python, SQLite" data-link="https://github.com/dsumeet14/Flowchart-Drawer">
-            <h3>Flowchart Drawer</h3>
-            <p>Automation pipeline from Excel to PDF.</p>
-            <span class="tech">Python</span>
-            <a href="https://github.com/dsumeet14/Flowchart-Drawer" class="btn">GitHub</a>
-          </li>
-        </ul>
+      <!-- ===== Python & Java Projects ===== -->
+      <h2>Python & Java Programs</h2>
+      <div class="project-carousel" id="carousel-lang">
+        <button class="carousel-btn prev">‹</button>
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            <li
+              class="project-card"
+              data-title="Shop Management Program"
+              data-description="Java app for billing and inventory."
+              data-tech="Java"
+              data-link="https://github.com/dsumeet14/Electronic-Shop-Management-System-Java"
+            >
+              <h3>Shop Manager</h3>
+              <p>Billing + inventory system.</p>
+              <span class="tech">Java</span>
+              <a
+                href="https://github.com/dsumeet14/Electronic-Shop-Management-System-Java"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="Weather App"
+              data-description="Python GUI using OpenWeather API."
+              data-tech="Python"
+              data-link="https://github.com/dsumeet14/Weather-App"
+            >
+              <h3>Weather App</h3>
+              <p>Live city weather app.</p>
+              <span class="tech">Python</span>
+              <a href="https://github.com/dsumeet14/Weather-App" class="btn"
+                >GitHub</a
+              >
+            </li>
+            <li
+              class="project-card"
+              data-title="Flowchart Drawer"
+              data-description="Reads Excel ➝ JSON ➝ SQLite ➝ PDF flowchart."
+              data-tech="Python, SQLite"
+              data-link="https://github.com/dsumeet14/Flowchart-Drawer"
+            >
+              <h3>Flowchart Drawer</h3>
+              <p>Automation pipeline from Excel to PDF.</p>
+              <span class="tech">Python</span>
+              <a
+                href="https://github.com/dsumeet14/Flowchart-Drawer"
+                class="btn"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+        <button class="carousel-btn next">›</button>
       </div>
-      <button class="carousel-btn next">›</button>
-    </div>
+    </section>
 
-  </section>
-
-  <!-- Project Details Modal -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
-      <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
-      <p><a href="#" id="modalLink" target="_blank" class="cta">View on GitHub</a></p>
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
+        <p>
+          <a href="#" id="modalLink" target="_blank" class="cta"
+            >View on GitHub</a
+          >
+        </p>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
