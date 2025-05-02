@@ -1,140 +1,184 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   /* ---------------- Theme Persistence & Avatar Swap ---------------- */
-  const avatar = document.getElementById('avatarImg');
-  const logo = document.getElementById('logoImg');
-const setTheme = theme => {
-  document.body.classList.remove('light-mode', 'dark-mode');
-  document.body.classList.add(theme);
-  localStorage.setItem('theme', theme);
-  if (avatar) {
-    avatar.src = theme === 'light-mode' 
-      ? 'assets/img/avatar_light.png' 
-      : 'assets/img/avatar.png';
-  }
-  if (logo) {
-    logo.src = theme === 'light-mode' ? 'assets/img/logo-light.png' : 'assets/img/logo.png';
-  }
-};
+  const avatar = document.getElementById("avatarImg");
+  const logo = document.getElementById("logoImg");
+  const setTheme = (theme) => {
+    document.body.classList.remove("light-mode", "dark-mode");
+    document.body.classList.add(theme);
+    localStorage.setItem("theme", theme);
+    if (avatar) {
+      avatar.src =
+        theme === "light-mode"
+          ? "assets/img/avatar_light.png"
+          : "assets/img/avatar.png";
+    }
+    if (logo) {
+      logo.src =
+        theme === "light-mode"
+          ? "assets/img/logo-light.png"
+          : "assets/img/logo.png";
+    }
+  };
 
-  const storedTheme = localStorage.getItem('theme') || 'dark-mode';
+  const storedTheme = localStorage.getItem("theme") || "dark-mode";
   setTheme(storedTheme);
 
-  const toggle = document.getElementById('mode-toggle');
+  const toggle = document.getElementById("mode-toggle");
   if (toggle) {
-    toggle.textContent = storedTheme === 'light-mode' ? '🌞' : '🌙';
-    toggle.addEventListener('click', () => {
-      const current = document.body.classList.contains('light-mode') ? 'light-mode' : 'dark-mode';
-      const next = current === 'dark-mode' ? 'light-mode' : 'dark-mode';
+    toggle.textContent = storedTheme === "light-mode" ? "🌞" : "🌙";
+    toggle.addEventListener("click", () => {
+      const current = document.body.classList.contains("light-mode")
+        ? "light-mode"
+        : "dark-mode";
+      const next = current === "dark-mode" ? "light-mode" : "dark-mode";
       setTheme(next);
-      toggle.textContent = next === 'light-mode' ? '🌞' : '🌙';
+      toggle.textContent = next === "light-mode" ? "🌞" : "🌙";
     });
   }
 
   /* ---------------- Navigation Active Tab ---------------- */
-  const path = window.location.pathname.split('/').pop();
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === path);
-  });
+  // Get all navigation links
+  const navLinks = document.querySelectorAll(".nav-list a");
+
+  // Function to set active class based on the current page
+  function setActiveLink() {
+    const currentPage = window.location.pathname.split("/").pop();
+    navLinks.forEach((link) => {
+      if (link.href.includes(currentPage)) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
+  // Call the function when the page loads
+  window.addEventListener("load", setActiveLink);
 
   /* ---------------- Typewriter Effect ---------------- */
-  const typeEl = document.querySelector('.typewriter');
+  const typeEl = document.querySelector(".typewriter");
   if (typeEl) {
-    const text = "Hi, I’m Sumeet — I build intelligent systems & thoughtful designs.";
-    typeEl.textContent = '';
-    [...text].forEach((char, i) => {
-      const span = document.createElement('span');
-      span.textContent = char;
-      span.style.animationDelay = `${i * 0.03}s`;
-      typeEl.appendChild(span);
-    });
+    const text =
+      "Hi, I’m Sumeet — I build intelligent systems & thoughtful designs.";
+
+    const startTyping = () => {
+      typeEl.textContent = ""; // Clear the previous text
+      [...text].forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        span.style.animationDelay = `${i * 0.03}s`; // Create animation delay for each character
+        typeEl.appendChild(span);
+      });
+    };
+
+    // Start the typing animation
+    startTyping();
+
+    // Repeat the animation after a delay
+    setInterval(() => {
+      startTyping(); // Restart typing
+    }, text.length * 30 + 2000); // Delay after finishing (text length * delay + 2 seconds pause)
   }
 
   /* ---------------- Carousel Setup ---------------- */
   function setupCarousel(id) {
     const container = document.getElementById(id);
     if (!container) return;
-    const track = container.querySelector('.carousel-track');
+    const track = container.querySelector(".carousel-track");
     const items = Array.from(track.children);
-    const prev = container.querySelector('.prev');
-    const nextBtn = container.querySelector('.next');
-    let idx = 0, intervalId;
+    const prev = container.querySelector(".prev");
+    const nextBtn = container.querySelector(".next");
+    let idx = 0,
+      intervalId;
 
-    const cardsPerView = () => Math.floor(container.clientWidth / (items[0].getBoundingClientRect().width + 20));
+    // Determine if this is a recommendation carousel (1 card visible) or a project carousel (multiple cards visible)
+    const isRecommendationCarousel = id.includes("recCarousel"); // Check if it's the recommendations carousel
+    const cardsPerView = isRecommendationCarousel
+      ? 1 // Only 1 card visible in recommendations
+      : Math.floor(
+          container.clientWidth / (items[0].getBoundingClientRect().width + 20)
+        ); // Multiple cards visible in projects
 
-    const goTo = i => {
-      const max = items.length - cardsPerView();
+    // Ensure the maximum number of items to display is correctly adjusted
+    const max = items.length - cardsPerView; // For recommendations, max will be 1 less than the total items
+
+    const goTo = (i) => {
       if (i < 0) i = max;
       if (i > max) i = 0;
       idx = i;
-      const shift = idx * (items[0].getBoundingClientRect().width + 20);
-      track.style.transform = `translateX(-${shift}px)`;
+
+      const shift = idx * (items[0].getBoundingClientRect().width + 20); // Shift based on the card width
+      track.style.transform = `translateX(-${shift}px)`; // Apply the translation to slide the carousel
     };
 
-    prev?.addEventListener('click', () => goTo(idx - 1));
-    nextBtn?.addEventListener('click', () => goTo(idx + 1));
+    prev?.addEventListener("click", () => goTo(idx - 1));
+    nextBtn?.addEventListener("click", () => goTo(idx + 1));
 
-    const start = () => intervalId = setInterval(() => goTo(idx + 1), 4000);
-    const stop  = () => clearInterval(intervalId);
+    const start = () => (intervalId = setInterval(() => goTo(idx + 1), 2000));
+    const stop = () => clearInterval(intervalId);
 
-    container.addEventListener('mouseenter', stop);
-    container.addEventListener('mouseleave', start);
-    window.addEventListener('resize', () => goTo(idx));
+    container.addEventListener("mouseenter", stop);
+    container.addEventListener("mouseleave", start);
+    window.addEventListener("resize", () => goTo(idx)); // Recalculate shift on window resize
 
     start();
     goTo(0);
   }
-  setupCarousel('projCarousel');
-  setupCarousel('recCarousel');
-  setupCarousel('carousel-ai');
-  setupCarousel('carousel-php');
-  setupCarousel('carousel-ux');
-  setupCarousel('carousel-html');
-  setupCarousel('carousel-lang');
-  
+
+  setupCarousel("projCarousel");
+  setupCarousel("recCarousel");
+  setupCarousel("carousel-ai");
+  setupCarousel("carousel-php");
+  setupCarousel("carousel-ux");
+  setupCarousel("carousel-html");
+  setupCarousel("carousel-lang");
+
   /* ---------------- Recommendations Toggle ---------------- */
-  document.querySelectorAll('.view-recommendation-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+  document.querySelectorAll(".view-recommendation-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
       const details = btn.nextElementSibling;
       if (details) {
-        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        details.style.display =
+          details.style.display === "block" ? "none" : "block";
       }
     });
   });
 
   /* ---------------- Project Details Modal ---------------- */
-  const modal = document.getElementById('projectModal');
-  const mTitle = document.getElementById('modalTitle');
-  const mDesc  = document.getElementById('modalDescription');
-  const mTech  = document.getElementById('modalTech');
-  const mLink  = document.getElementById('modalLink');
-  const mClose = modal?.querySelector('.modal-close');
+  const modal = document.getElementById("projectModal");
+  const mTitle = document.getElementById("modalTitle");
+  const mDesc = document.getElementById("modalDescription");
+  const mTech = document.getElementById("modalTech");
+  const mLink = document.getElementById("modalLink");
+  const mClose = modal?.querySelector(".modal-close");
 
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', e => {
-      if (e.target.closest('a')) return;
-      mTitle.textContent       = card.dataset.title;
-      mDesc.textContent        = card.dataset.description;
-      mTech.textContent        = card.dataset.tech;
-      mLink.href               = card.dataset.link;
-      modal.style.display      = 'flex';
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      mTitle.textContent = card.dataset.title;
+      mDesc.textContent = card.dataset.description;
+      mTech.textContent = card.dataset.tech;
+      mLink.href = card.dataset.link;
+      modal.style.display = "flex";
     });
   });
-  mClose?.addEventListener('click', () => modal.style.display = 'none');
-  modal?.addEventListener('click', e => {
-    if (e.target === modal) modal.style.display = 'none';
+  mClose?.addEventListener("click", () => (modal.style.display = "none"));
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
   });
 
   /* ---------------- Timeline Details Toggle ---------------- */
   function closeAllDetails() {
-    document.querySelectorAll('.timeline-item .details')
-      .forEach(d => d.style.display = 'none');
+    document
+      .querySelectorAll(".timeline-item .details")
+      .forEach((d) => (d.style.display = "none"));
   }
   function toggleDetails(item) {
-    const details = item.querySelector('.details');
+    const details = item.querySelector(".details");
     if (!details) return;
-    const open = details.style.display === 'block';
+    const open = details.style.display === "block";
     closeAllDetails();
-    details.style.display = open ? 'none' : 'block';
+    details.style.display = open ? "none" : "block";
   }
   window.toggleDetails = toggleDetails; // expose to inline onclick
 
@@ -142,18 +186,43 @@ const setTheme = theme => {
   closeAllDetails();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Example dynamic XP values
-  const xpBars = document.querySelectorAll('.xp-bar div');
-  xpBars.forEach(bar => {
-    const xpValue = parseInt(bar.style.width);  // Get dynamic width from inline styles
-    bar.style.setProperty('--xp-width', `${xpValue}%`);
+  const xpBars = document.querySelectorAll(".xp-bar div");
+  xpBars.forEach((bar) => {
+    const xpValue = parseInt(bar.style.width); // Get dynamic width from inline styles
+    bar.style.setProperty("--xp-width", `${xpValue}%`);
   });
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const xpBars = document.querySelectorAll('.xp-bar div');
-  xpBars.forEach(bar => {
-    const xpValue = bar.getAttribute('data-xp'); // Get the XP percentage dynamically (e.g., 90%)
+document.addEventListener("DOMContentLoaded", () => {
+  const xpBars = document.querySelectorAll(".xp-bar div");
+  xpBars.forEach((bar) => {
+    const xpValue = bar.getAttribute("data-xp"); // Get the XP percentage dynamically (e.g., 90%)
     bar.style.width = xpValue; // Apply the width dynamically
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const flipContainer = document.getElementById("avatarFlip");
+  const avatarFront = document.getElementById("avatarFront");
+
+  const setFrontImage = () => {
+    avatarFront.src = document.body.classList.contains("light-mode")
+      ? "assets/img/avatar_light.png"
+      : "assets/img/avatar.png";
+  };
+
+  setFrontImage(); // Initialize on load
+
+  flipContainer.addEventListener("click", () => {
+    flipContainer.classList.toggle("flipped"); // Flip the avatar on click
+  });
+
+  // Optional: re-set avatar front if theme changes
+  const modeToggle = document.getElementById("mode-toggle");
+  if (modeToggle) {
+    modeToggle.addEventListener("click", () => {
+      setTimeout(setFrontImage, 300); // wait until class switches
+    });
+  }
 });
