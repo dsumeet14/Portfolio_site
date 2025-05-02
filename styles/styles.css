@@ -6,14 +6,6 @@ a {
 }
 
 /* Links on hover */
-a:hover {
-  color: var(--btn-bg); /* On hover, change to button color */
-}
-
-/* Active link color */
-.nav a.active {
-  color: var(--btn-bg);
-}
 
 /* ===== Dark Mode Link Colors ===== */
 body.dark-mode a {
@@ -24,7 +16,7 @@ body.dark-mode a:hover {
   color: var(--btn-bg); /* Brighter hover for dark mode */
 }
 
-body.dark-mode .nav a.active {
+body.dark-mode a.active {
   color: var(--btn-bg); /* Active links */
 }
 
@@ -37,7 +29,7 @@ body.light-mode a:hover {
   color: var(--btn-bg-dark); /* Slightly darker hover color */
 }
 
-body.light-mode .nav a.active {
+body.light-mode a.active {
   color: var(--btn-bg-dark); /* Active links in light mode */
 }
 
@@ -68,7 +60,7 @@ body.light-mode {
 :root {
   --bg: #0f0f0f;
   --text: #ffffff;
-  --nav-bg: #0f0f0f;
+  --nav-bg: #ffffff;
   --primary: #00ffc6;
   --card-bg: #1a1a1a;
   --card-hover: #222222;
@@ -78,31 +70,29 @@ body.light-mode {
   --btn-text: #0f0f0f;
   --btn-bg: #00ffc6;
   --btn-bg-hover: #00ccaa;
-  --shadow: rgba(0,255,198,0.2);
+  --shadow: rgba(0, 255, 198, 0.2);
 }
 
 body.light-mode {
-  --bg: #F9FBFF;               /* Ultra-light blueish white */
-  --text: #1F1F1F;             /* Dark charcoal text */
-  --nav-bg: #FFFFFF;           /* White nav */
-  --primary: #00C2B2;          /* Teal (lighter than neon) */
-  --card-bg: #FFFFFF;          /* White card */
-  --card-hover: #F1FDFB;       /* Light mint hover */
-  --track-bg: #D6F3EF;         /* Pale aqua for XP bars */
-  --input-bg: #F7FAFA;         /* Soft input bg */
-  --input-text: #2C2C2C;       /* Dark readable input text */
-  --btn-text: #FFFFFF;         /* White text */
-  --btn-bg: #00C2B2;           /* Primary button color */
-  --btn-bg-hover: #009D91;     /* Slightly darker teal on hover */
+  --bg: #f9fbff; /* Ultra-light blueish white */
+  --text: #1f1f1f; /* Dark charcoal text */
+  --nav-bg: #ffffff; /* White nav */
+  --primary: #00c2b2; /* Teal (lighter than neon) */
+  --card-bg: #ffffff; /* White card */
+  --card-hover: #f1fdfb; /* Light mint hover */
+  --track-bg: #d6f3ef; /* Pale aqua for XP bars */
+  --input-bg: #f7fafa; /* Soft input bg */
+  --input-text: #2c2c2c; /* Dark readable input text */
+  --btn-text: #ffffff; /* White text */
+  --btn-bg: #00c2b2; /* Primary button color */
+  --btn-bg-hover: #009d91; /* Slightly darker teal on hover */
   --shadow: rgba(0, 194, 178, 0.2); /* Teal glow */
 }
 
-
 .project-carousel {
-  margin-top: 10px;   /* space between title and carousel */
+  margin-top: 10px; /* space between title and carousel */
   margin-bottom: 60px; /* space between carousels */
 }
-
 
 /* ===== Reset ===== */
 * {
@@ -113,34 +103,34 @@ body.light-mode {
 
 /* ===== Base ===== */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
 }
 
 /* ===== Navigation ===== */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: var(--nav-bg);
-}
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+/* Remove underline from all links */
+/* ===== Navigation ===== */
+/* Remove underline from all links */
 .nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
+  text-decoration: none; /* Remove default underline */
+  color: var(--nav-bg) !important;
+  transition: color 0.3s ease;
 }
-.nav a.active,
+
+/* Style for active navigation link */
+.nav a.active {
+  color: var(--primary) !important; /* Active link color (you can change it) */
+  font-weight: bold; /* Bold text for the active tab */
+  text-decoration: none; /* Underline the active tab */
+}
+
+/* Links on hover */
 .nav a:hover {
-  color: var(--primary);
+  color: var(--btn-bg); /* Hover color */
 }
+
 #mode-toggle {
   background: none;
   border: none;
@@ -195,8 +185,14 @@ body {
   animation: fadeInLetter 0.5s forwards;
 }
 @keyframes fadeInLetter {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== Carousel Sections ===== */
@@ -219,18 +215,19 @@ body {
   margin: 0;
 }
 .carousel-item {
-  flex: 1 0 100%;
-  padding: 2rem;
+  flex: 1 0 99%;
+  padding: 15px;
   background: var(--card-bg);
   margin: 10px;
   border-radius: 1rem;
   box-shadow: 0 0 15px var(--shadow);
+  border: 1px solid #9df6ee; /* For debugging */
 }
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   border: none;
   color: var(--text);
   font-size: 2rem;
@@ -238,8 +235,12 @@ body {
   cursor: pointer;
   z-index: 2;
 }
-.carousel-btn.prev { left: 10px; }
-.carousel-btn.next { right: 10px; }
+.carousel-btn.prev {
+  left: 10px;
+}
+.carousel-btn.next {
+  right: 10px;
+}
 
 /* ===== Recommendations ===== */
 .view-recommendation-btn {
@@ -442,7 +443,6 @@ body.light-mode .profile-img-container img {
   }
 }
 
-
 .badge {
   display: inline-block;
   background: var(--primary);
@@ -570,23 +570,35 @@ body.light-mode .profile-img-container img {
 .project-card .btn:hover {
   background: var(--btn-bg-hover);
 }
-.carousel-btn.prev { left: 5px; }
-.carousel-btn.next { right: 5px; }
+.carousel-btn.prev {
+  left: 5px;
+}
+.carousel-btn.next {
+  right: 5px;
+}
 @media (max-width: 768px) {
-  .project-card { flex: 0 0 calc(50% - 20px); }
+  .project-card {
+    flex: 0 0 calc(50% - 20px);
+  }
 }
 @media (max-width: 480px) {
-  .project-card { flex: 0 0 100%; margin: 10px 0; }
+  .project-card {
+    flex: 0 0 100%;
+    margin: 10px 0;
+  }
 }
 
 /* ===== Modal ===== */
+
 .modal {
   display: none;
   position: fixed;
   z-index: 10;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
   align-items: center;
   justify-content: center;
   overflow: auto;
@@ -594,8 +606,9 @@ body.light-mode .profile-img-container img {
 .modal-content {
   background: var(--card-bg);
   color: var(--text);
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 20px;
+  padding-right: 40px;
   border-radius: 10px;
   max-width: 600px;
   position: relative;
@@ -603,7 +616,8 @@ body.light-mode .profile-img-container img {
 }
 .modal-close {
   position: absolute;
-  top: 10px; right: 15px;
+  top: 10px;
+  right: 15px;
   font-size: 2rem;
   color: var(--text);
   cursor: pointer;
@@ -615,19 +629,24 @@ body.light-mode .profile-img-container img {
 /* ===== Resume & Timeline Wrapper ===== */
 /* ===== Resume Container ===== */
 /* ===== Section Headings (Projects & Resume) ===== */
-.projects h1,
-.resume h1 {
-  text-align: center;          /* center the title */
+.projects h1 {
+  text-align: center; /* center the title */
   margin-bottom: 1.5rem;
-  font-size: 2.5rem;           /* same size as Projects */
-  color: var(--primary);       /* same color */
+  font-size: 2.5rem; /* same size as Projects */
+  color: var(--primary); /* same color */
   font-weight: bold;
 }
-
+.carousel-section h1 {
+  text-align: center; /* center the title */
+  margin-bottom: 0rem;
+  font-size: 2rem; /* same size as Projects */
+  color: var(--primary); /* same color */
+  font-weight: bold;
+}
 /* ===== Center the Resume Section ===== */
 .resume {
   max-width: 900px;
-  margin: 0 auto 40px;         /* auto left/right to center */
+  margin: 0 auto 40px; /* auto left/right to center */
   padding: 0 20px;
 }
 
@@ -645,7 +664,6 @@ body.light-mode .profile-img-container img {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-
 
 /* ===== Central Timeline Line ===== */
 .timeline {
@@ -667,12 +685,12 @@ body.light-mode .profile-img-container img {
 /* ===== Timeline Items ===== */
 .timeline-item {
   position: relative;
-  width: 48%;                /* consistent width on both sides */
+  width: 48%; /* consistent width on both sides */
   padding: 1.5rem;
   background: var(--card-bg);
   border: 2px solid var(--primary);
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
   margin-bottom: 2rem;
   clear: both;
@@ -706,10 +724,10 @@ body.light-mode .profile-img-container img {
   border-radius: 50%;
 }
 .timeline-item.left::after {
-  right: -36px;  /* sits on center line */
+  right: -36px; /* sits on center line */
 }
 .timeline-item.right::after {
-  left: -36px;   /* sits on center line */
+  left: -36px; /* sits on center line */
 }
 
 /* ===== Summary & Details ===== */
@@ -717,7 +735,7 @@ body.light-mode .profile-img-container img {
   cursor: pointer;
 }
 .timeline-item .details {
-  display: none;  /* collapsed by default */
+  display: none; /* collapsed by default */
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px dashed var(--primary);
@@ -807,13 +825,6 @@ section h2 {
   text-decoration: none;
   font-weight: bold;
 }
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  background: var(--nav-bg);
-}
 
 .nav-logo img {
   height: 60px; /* increased from 40px */
@@ -832,7 +843,6 @@ section h2 {
   padding: 16px 30px; /* slightly reduced padding */
 }
 
-
 .nav-list {
   list-style: none;
   display: flex;
@@ -841,18 +851,52 @@ section h2 {
   padding: 0;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
-}
-
-.nav a.active,
-.nav a:hover {
-  color: var(--btn-bg);
-}
 .nav-logo img {
   height: 60px;
   width: auto;
   transition: transform 0.3s ease;
+}
+.avatar-flip-container {
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.avatar-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.avatar-flip-container:hover .avatar-flipper {
+  transform: rotateY(
+    40deg
+  ); /* Show a subtle flip effect when hovered, even when flipped */
+}
+
+.avatar-flip-container.flipped .avatar-flipper {
+  transform: rotateY(180deg); /* Full flip on click */
+}
+
+.avatar-front,
+.avatar-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  backface-visibility: hidden;
+  box-shadow: 0 0 15px var(--primary);
+  transition: box-shadow 0.3s ease;
+}
+
+.avatar-back {
+  transform: rotateY(180deg);
+}
+
+/* Ensure the back also shows the hover effect */
+.avatar-flip-container.flipped:hover .avatar-flipper {
+  transform: rotateY(220deg); /* When flipped, show hover effect on back */
 }
