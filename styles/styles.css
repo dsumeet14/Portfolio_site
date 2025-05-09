@@ -152,9 +152,13 @@ nav {
   align-items: center;
   padding: 50px;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 .hero-content {
-  max-width: 600px;
+  max-width: 1000px;
+  min-width: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .hero-avatar img {
   width: 250px;
@@ -183,7 +187,9 @@ nav {
 
 /* ===== Typing Animation ===== */
 .typewriter {
-  white-space: pre;
+  white-space: pre-wrap; /* ← CHANGE from pre */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 .typewriter span {
   opacity: 0;
