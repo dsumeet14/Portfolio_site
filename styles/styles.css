@@ -76,7 +76,7 @@ body.light-mode {
 body.light-mode {
   --bg: #f9fbff; /* Ultra-light blueish white */
   --text: #1f1f1f; /* Dark charcoal text */
-  --nav-bg: #ffffff; /* White nav */
+  --nav-bg: #f9fbff; /* White nav */
   --primary: #00c2b2; /* Teal (lighter than neon) */
   --card-bg: #ffffff; /* White card */
   --card-hover: #f1fdfb; /* Light mint hover */
