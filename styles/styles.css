@@ -60,7 +60,7 @@ body.light-mode {
 :root {
   --bg: #0f0f0f;
   --text: #ffffff;
-  --nav-bg: #ffffff;
+  --nav-bg: #0f0f0f;
   --primary: #00ffc6;
   --card-bg: #1a1a1a;
   --card-hover: #222222;
@@ -107,6 +107,12 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* ensure it stays above other content */
+  background-color: var(--nav-bg);
 }
 
 /* ===== Navigation ===== */
