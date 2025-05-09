@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeEl = document.querySelector(".typewriter");
   if (typeEl) {
     const text =
-      "Hi, I’m Sumeet — I build intelligent systems & thoughtful designs.";
+      "Hi, I’m Sumeet — I build intelligent systems & thoughtful designs. added more words more more more more more";
 
     const startTyping = () => {
       typeEl.textContent = ""; // Clear the previous text
