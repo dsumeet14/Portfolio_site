@@ -52,6 +52,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
+    if (CSS.supports && !CSS.supports("position", "sticky")) {
+      const nav = document.querySelector("nav");
+      const offset = nav.offsetTop;
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset >= offset) {
+          nav.style.position = "fixed";
+          nav.style.top = "0";
+        } else {
+          nav.style.position = "";
+        }
+      });
+    }
+  });
+
   // Call the function when the page loads
   window.addEventListener("load", setActiveLink);
 
