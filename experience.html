@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume - Sumeet Dube</title>
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script src="scripts/script.js" defer></script>
-  
-</head>
-<body>
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">
-      <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
-    </a>
-    
-    <ul class="nav-list">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="experience.html">Experience</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button id="mode-toggle">🌙</button>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume - Sumeet Dube</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
+      </a>
 
-  <section class="resume">
-    <h1>Experience</h1>
+      <button
+        class="hamburger"
+        id="hamburger-toggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
 
-    <!-- Contact & Summary -->
-    <div class="contact-summary">
-      
-      
-      <h2>Summary</h2>
-      <p>Final-year B.Tech (AI & ML) student specializing in Python, Data Science, PHP, MySQL, and database technologies. Passionate about applying theory to real-world challenges through internships and hands-on projects.</p>
-    </div>
+      <ul class="nav-list" id="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-    <!-- Internships Timeline: Reverse Chronological -->
-    <div class="timeline">
+      <button id="mode-toggle">🌙</button>
+    </nav>
+
+    <section class="resume">
+      <h1>Experience</h1>
+
+      <!-- Contact & Summary -->
+      <div class="contact-summary">
+        <h2>Summary</h2>
+        <p>
+          Final-year B.Tech (AI & ML) student specializing in Python, Data
+          Science, PHP, MySQL, and database technologies. Passionate about
+          applying theory to real-world challenges through internships and
+          hands-on projects.
+        </p>
+      </div>
+
+      <!-- Internships Timeline: Reverse Chronological -->
+      <div class="timeline">
         <!-- Most Recent First -->
         <div class="timeline-item right" onclick="toggleDetails(this)">
           <div class="summary">
@@ -45,10 +55,14 @@
             <p>Software Developer Intern</p>
           </div>
           <div class="details">
-            <p>Assisted in full-stack development of business software, implemented new features in Python and JavaScript, and collaborated with senior developers on agile teams.</p>
+            <p>
+              Assisted in full-stack development of business software,
+              implemented new features in Python and JavaScript, and
+              collaborated with senior developers on agile teams.
+            </p>
           </div>
         </div>
-      
+
         <div class="timeline-item left" onclick="toggleDetails(this)">
           <div class="summary">
             <span class="date">Jan 2024 – Mar 2024</span>
@@ -56,10 +70,14 @@
             <p>Software Developer Intern</p>
           </div>
           <div class="details">
-            <p>Led backend development on a greenfield project, optimized database interactions, and enhanced application performance by 25%.</p>
+            <p>
+              Led backend development on a greenfield project, optimized
+              database interactions, and enhanced application performance by
+              25%.
+            </p>
           </div>
         </div>
-      
+
         <!-- Continue alternating -->
         <div class="timeline-item right" onclick="toggleDetails(this)">
           <div class="summary">
@@ -68,10 +86,14 @@
             <p>Intern</p>
           </div>
           <div class="details">
-            <p>Gained hands-on experience in enterprise IT solutions, collaborated with professionals, and contributed to business strategy discussions.</p>
+            <p>
+              Gained hands-on experience in enterprise IT solutions,
+              collaborated with professionals, and contributed to business
+              strategy discussions.
+            </p>
           </div>
         </div>
-      
+
         <div class="timeline-item left" onclick="toggleDetails(this)">
           <div class="summary">
             <span class="date">Jun 2023 – Jul 2023</span>
@@ -79,10 +101,13 @@
             <p>Software Developer Intern</p>
           </div>
           <div class="details">
-            <p>Developed and tested software modules for national security applications; improved debugging and teamwork skills.</p>
+            <p>
+              Developed and tested software modules for national security
+              applications; improved debugging and teamwork skills.
+            </p>
           </div>
         </div>
-      
+
         <!-- Add your new AIESEC & AASHMAN entries -->
         <div class="timeline-item right" onclick="toggleDetails(this)">
           <div class="summary">
@@ -91,10 +116,13 @@
             <p>Vice President of Marketing (WLL Event)</p>
           </div>
           <div class="details">
-            <p>Led marketing for a city-wide Women’s Leadership Lab; increased event attendance by 30% and boosted digital engagement.</p>
+            <p>
+              Led marketing for a city-wide Women’s Leadership Lab; increased
+              event attendance by 30% and boosted digital engagement.
+            </p>
           </div>
         </div>
-      
+
         <div class="timeline-item left" onclick="toggleDetails(this)">
           <div class="summary">
             <span class="date">Feb 2023 – Aug 2023</span>
@@ -102,10 +130,13 @@
             <p>Junior Executive, Incoming Global Talent</p>
           </div>
           <div class="details">
-            <p>Managed incoming international interns, coordinated cross-cultural exchanges, and supported onboarding processes.</p>
+            <p>
+              Managed incoming international interns, coordinated cross-cultural
+              exchanges, and supported onboarding processes.
+            </p>
           </div>
         </div>
-      
+
         <div class="timeline-item right" onclick="toggleDetails(this)">
           <div class="summary">
             <span class="date">Sept 2022 – Nov 2022</span>
@@ -113,11 +144,15 @@
             <p>Social Media Marketing Intern</p>
           </div>
           <div class="details">
-            <p>Created and managed social media campaigns for child education and health initiatives, raising community awareness and support.</p>
+            <p>
+              Created and managed social media campaigns for child education and
+              health initiatives, raising community awareness and support.
+            </p>
           </div>
         </div>
       </div>
-      
-  </section>
-</body>
+    </section>
+        <script src="scripts/script.js" defer></script>
+
+  </body>
 </html>

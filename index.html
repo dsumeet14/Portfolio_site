@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sumeet Dube Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="scripts/script.js" defer></script>
   </head>
 
   <body>
@@ -15,13 +14,22 @@
         <img id="logoImg" src="assets/img/logo.png" alt="Sumeet Dube Logo" />
       </a>
 
-      <ul class="nav-list">
+      <button
+        class="hamburger"
+        id="hamburger-toggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+
+      <ul class="nav-list" id="nav-menu">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="experience.html">Experience</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+
       <button id="mode-toggle">🌙</button>
     </nav>
 
@@ -31,7 +39,7 @@
         <h1 class="typewriter"></h1>
         <div class="cta-buttons">
           <a href="contact.html" class="cta">Get in Touch</a>
-          <a href="https://drive.google.com/file/d/1oGkS6CfF5Tou2qqFsAu06dW9bL1Cba1r/view?usp=sharing" class="cta">Resume</a>
+          <a href="resume.html" class="cta">Resume</a>
         </div>
       </div>
       <div class="avatar-flip-container" id="avatarFlip">
@@ -102,5 +110,7 @@
         <button class="carousel-btn next">›</button>
       </div>
     </section>
+        <script src="scripts/script.js" defer></script>
+
   </body>
 </html>
