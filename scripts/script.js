@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeEl = document.querySelector(".typewriter");
   if (typeEl) {
     const text =
-      "Hi, I’m Sumeet — Software developer. UX thinker. AI explorer.     Driven to build solutions that work and wow. ";
+      "Hi, I’m Sumeet — Software developer. UX thinker. AI explorer.     Driven to build solutions that work and wow.";
 
     const startTyping = () => {
       typeEl.textContent = ""; // Clear the previous text
@@ -238,6 +238,17 @@ document.addEventListener("DOMContentLoaded", () => {
   if (modeToggle) {
     modeToggle.addEventListener("click", () => {
       setTimeout(setFrontImage, 300); // wait until class switches
+    });
+  }
+});
+// Responsive Navbar Toggle
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
     });
   }
 });
