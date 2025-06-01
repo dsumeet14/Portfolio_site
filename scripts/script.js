@@ -242,13 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 // Responsive Navbar Toggle
-document.addEventListener('DOMContentLoaded', function () {
-  const hamburger = document.getElementById('hamburger-toggle');
-  const navMenu = document.getElementById('nav-menu');
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.getElementById("hamburger-toggle");
+  const navMenu = document.getElementById("nav-menu");
 
   if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
     });
   }
 });
