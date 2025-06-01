@@ -912,3 +912,51 @@ section h2 {
 .avatar-flip-container.flipped:hover .avatar-flipper {
   transform: rotateY(220deg); /* When flipped, show hover effect on back */
 }
+/* Responsive Navigation */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  margin-left: auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #mode-toggle {
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .some-desktop-layout {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .some-wide-box {
+    width: 100%;
+  }
+}
